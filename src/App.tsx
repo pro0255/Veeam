@@ -5,7 +5,7 @@ import { Solution } from './components/Solution';
 import { DefaultLayout } from './layout/DefaultLayout';
 
 function App() {
-  const [isSolution, setIsSolution] = useState<boolean>(false);
+  const [isSolution, setIsSolution] = useState<boolean>(true);
 
   const pepa = useCallback(() => {
     console.log(isSolution);

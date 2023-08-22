@@ -1,6 +1,8 @@
 import React from 'react';
 import { Editor } from '@monaco-editor/react';
+import { useFormEditor } from './hooks/useFormEditor';
 
 export const FormEditor = () => {
-  return <Editor height="90vh" defaultLanguage="javascript" defaultValue="// some comment" />;
+  const { validate } = useFormEditor();
+  return <Editor height="90vh" defaultLanguage="json" onValidate={validate} />;
 };
