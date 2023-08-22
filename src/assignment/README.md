@@ -21,3 +21,8 @@
 
 - [ ] - Write a schema validator
 
+## Ideas to have a production ready product
+
+- Style all the components
+- Add formatting for json value into monaco editor
+
