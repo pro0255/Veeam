@@ -2,6 +2,7 @@ export const SCHEMA = {
   uri: 'http://myserver/foo-schema.json',
   fileMatch: ['*'],
   schema: {
+    required: ['items'],
     type: 'object',
     properties: {
       title: { type: 'string' },
