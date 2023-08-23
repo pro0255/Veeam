@@ -1,5 +1,8 @@
 import React from 'react';
+import { useFormStorageContext } from '../FormStorage';
 
 export const FormRenderer = () => {
-  return <div>Imagine it is a rendered form</div>;
+  const formStorage = useFormStorageContext();
+
+  return <div>{JSON.stringify(formStorage.form)}</div>;
 };
