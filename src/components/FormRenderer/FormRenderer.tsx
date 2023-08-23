@@ -24,11 +24,23 @@ export const FormRenderer = () => {
         flexDirection: 'column',
         border: 'solid 1px white',
         height: '100%',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'space-around'
       }}>
       {title && <FormTitle title={title} />}
-      <FormFields items={items} />
+      <div
+        style={{
+          display: 'grid',
+          wordWrap: 'break-word',
+          gridTemplateColumns: '20% 90%',
+          gap: '10px',
+          justifyContent: 'center',
+          alignItems: 'start',
+          width: '90%'
+        }}>
+        <FormFields items={items} />
+      </div>
       {footer && <FormFooter buttons={footer} />}
     </form>
   );

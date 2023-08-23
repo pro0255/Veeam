@@ -4,7 +4,14 @@ import { FormFieldProp } from './types';
 export const FormField = ({ children, label, type }: FormFieldProp) => {
   return (
     <>
-      <label>{label}</label>
+      <label
+        style={{
+          width: '100%',
+          marginRight: '20px',
+          fontSize: '30px'
+        }}>
+        {label}
+      </label>
       {children}
     </>
   );

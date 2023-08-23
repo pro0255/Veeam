@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormField } from '../FormField';
 import { FormFieldEnum } from '../fieldTypeToComponent';
+import { fullWidthAndHeight } from './style';
 
 type Props = {
   label: string;
@@ -9,7 +10,7 @@ type Props = {
 export const RadioButton = ({ label }: Props) => {
   return (
     <FormField label={label} type={FormFieldEnum.enum}>
-      <input type="radio" />
+      <input style={fullWidthAndHeight} type="radio" />
     </FormField>
   );
 };
