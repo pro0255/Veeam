@@ -1,5 +1,5 @@
-import { Fields, FormType } from '../../types';
-import { FormFieldEnum } from '../../FormRenderer/components/FormFields/fieldTypeToComponent';
+import { Fields, FormType } from '../../../types';
+import { FormFieldEnum } from '../../../FormRenderer/components/FormFields/fieldTypeToComponent';
 
 // Functions which helps to create all types of fields
 const createAllFields = () => {
@@ -12,8 +12,8 @@ const createAllFields = () => {
   });
 };
 
-export const DEFAULT_EDITOR_VALUE: FormType = {
-  title: 'This is example form',
+export const VALUE_ALL_FIELDS_FORM: FormType = {
+  title: 'All fields form',
   footer: [
     {
       label: 'OK'
@@ -25,5 +25,11 @@ export const DEFAULT_EDITOR_VALUE: FormType = {
       label: 'Apply'
     }
   ],
-  items: createAllFields()
+  items: [
+    ...createAllFields(),
+    {
+      label: 'test2',
+      type: FormFieldEnum.enum
+    }
+  ]
 };

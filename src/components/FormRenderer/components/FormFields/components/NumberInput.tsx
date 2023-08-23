@@ -1,16 +1,21 @@
-import React from 'react';
-import { FormField } from '../FormField';
-import { FormFieldEnum } from '../fieldTypeToComponent';
+import React, { forwardRef } from 'react';
 import { fullWidthAndHeight } from './style';
+import { createFieldId } from '../../../utils/createFieldId';
+import { FormFieldEnum } from '../fieldTypeToComponent';
+import { NumberInputProps } from './types';
 
-type Props = {
-  label: string;
-};
-
-export const NumberInput = ({ label }: Props) => {
+export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(({ label }, ref) => {
   return (
-    <FormField label={label} type={FormFieldEnum.number}>
-      <input style={fullWidthAndHeight} type={'number'} />
-    </FormField>
+    <input
+      id={createFieldId({
+        type: FormFieldEnum.number,
+        label
+      })}
+      ref={ref}
+      style={fullWidthAndHeight}
+      type={'number'}
+    />
   );
-};
+});
+
+NumberInput.displayName = 'NumberInput';

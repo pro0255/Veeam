@@ -2,13 +2,13 @@ import React, { createContext, ReactNode, useCallback, useMemo, useState } from 
 import { FormType } from './types';
 import { createUseEnsuredContext } from '../utils/createUseEnsuredContext';
 
-type FormStorageState = {
+type FormStorageValue = {
   save: (formString: string) => void;
   clear: () => void;
   form: FormType | null;
 };
 
-const FormStorage = createContext<FormStorageState>({} as FormStorageState);
+const FormStorageContext = createContext<FormStorageValue>({} as FormStorageValue);
 
 type Props = {
   children: ReactNode;
@@ -26,7 +26,7 @@ export const FormStorageProvider = ({ children }: Props) => {
     setForm(null);
   }, []);
 
-  const value: FormStorageState = useMemo(() => {
+  const value: FormStorageValue = useMemo(() => {
     return {
       save,
       clear,
@@ -34,7 +34,7 @@ export const FormStorageProvider = ({ children }: Props) => {
     };
   }, [clear, form, save]);
 
-  return <FormStorage.Provider value={value}>{children}</FormStorage.Provider>;
+  return <FormStorageContext.Provider value={value}>{children}</FormStorageContext.Provider>;
 };
 
-export const useFormStorageContext = createUseEnsuredContext(FormStorage, 'FormStorage');
+export const useFormStorageContext = createUseEnsuredContext(FormStorageContext, 'FormStorage');

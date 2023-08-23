@@ -1,16 +1,21 @@
-import React from 'react';
-import { FormField } from '../FormField';
-import { FormFieldEnum } from '../fieldTypeToComponent';
+import React, { forwardRef } from 'react';
 import { fullWidthAndHeight } from './style';
+import { createFieldId } from '../../../utils/createFieldId';
+import { FormFieldEnum } from '../fieldTypeToComponent';
+import { CheckboxProps } from './types';
 
-type Props = {
-  label: string;
-};
-
-export const Checkbox = ({ label }: Props) => {
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ label }, ref) => {
   return (
-    <FormField label={label} type={FormFieldEnum.boolean}>
-      <input style={fullWidthAndHeight} type="checkbox" value={'value'} />
-    </FormField>
+    <input
+      ref={ref}
+      style={fullWidthAndHeight}
+      type="checkbox"
+      id={createFieldId({
+        type: FormFieldEnum.boolean,
+        label
+      })}
+    />
   );
-};
+});
+
+Checkbox.displayName = 'Checkbox';

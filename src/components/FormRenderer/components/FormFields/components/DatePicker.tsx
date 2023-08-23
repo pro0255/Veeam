@@ -1,16 +1,21 @@
-import React from 'react';
-import { FormField } from '../FormField';
-import { FormFieldEnum } from '../fieldTypeToComponent';
+import React, { forwardRef } from 'react';
 import { fullWidthAndHeight } from './style';
+import { createFieldId } from '../../../utils/createFieldId';
+import { FormFieldEnum } from '../fieldTypeToComponent';
+import { DatePickerProps } from './types';
 
-type Props = {
-  label: string;
-};
-
-export const DatePicker = ({ label }: Props) => {
+export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({ label }, ref) => {
   return (
-    <FormField label={label} type={FormFieldEnum.date}>
-      <input style={fullWidthAndHeight} type="date" />
-    </FormField>
+    <input
+      id={createFieldId({
+        type: FormFieldEnum.date,
+        label
+      })}
+      ref={ref}
+      style={fullWidthAndHeight}
+      type="date"
+    />
   );
-};
+});
+
+DatePicker.displayName = 'DatePicker';

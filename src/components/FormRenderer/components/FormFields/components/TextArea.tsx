@@ -1,16 +1,20 @@
-import React from 'react';
-import { FormField } from '../FormField';
-import { FormFieldEnum } from '../fieldTypeToComponent';
+import React, { forwardRef } from 'react';
 import { fullWidthAndHeight } from './style';
+import { createFieldId } from '../../../utils/createFieldId';
+import { FormFieldEnum } from '../fieldTypeToComponent';
+import { TextAreaProps } from './types';
 
-type Props = {
-  label: string;
-};
-
-export const TextArea = ({ label }: Props) => {
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ label }, ref) => {
   return (
-    <FormField label={label} type={FormFieldEnum.multiLine}>
-      <textarea style={fullWidthAndHeight} />
-    </FormField>
+    <textarea
+      id={createFieldId({
+        type: FormFieldEnum.multiLine,
+        label
+      })}
+      ref={ref}
+      style={fullWidthAndHeight}
+    />
   );
-};
+});
+
+TextArea.displayName = 'TextArea';

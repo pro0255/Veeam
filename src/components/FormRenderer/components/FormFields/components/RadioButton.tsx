@@ -1,16 +1,26 @@
-import React from 'react';
-import { FormField } from '../FormField';
+import React, { forwardRef } from 'react';
+import { LabelWrapper } from '../LabelWrapper';
 import { FormFieldEnum } from '../fieldTypeToComponent';
 import { fullWidthAndHeight } from './style';
+import { createFieldId, createRadioButtonId } from '../../../utils/createFieldId';
+import { RadioButtonProps } from './types';
 
-type Props = {
-  label: string;
-};
+export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
+  ({ label, setId }, ref) => {
+    return (
+      <input
+        id={`${createRadioButtonId({
+          type: FormFieldEnum.enum,
+          label,
+          setId
+        })}-${setId}`}
+        ref={ref}
+        name={String(setId)}
+        style={fullWidthAndHeight}
+        type="radio"
+      />
+    );
+  }
+);
 
-export const RadioButton = ({ label }: Props) => {
-  return (
-    <FormField label={label} type={FormFieldEnum.enum}>
-      <input style={fullWidthAndHeight} type="radio" />
-    </FormField>
-  );
-};
+RadioButton.displayName = 'RadioButton';

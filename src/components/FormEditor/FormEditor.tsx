@@ -1,7 +1,7 @@
 import React from 'react';
 import { Editor } from '@monaco-editor/react';
 import { useFormEditor } from './hooks/useFormEditor';
-import { DEFAULT_EDITOR_VALUE } from './constants/default';
+import { MORE_RADIO_BUTTONS_FORM } from './constants/forms/moreRadioButtons';
 
 export const FormEditor = () => {
   const { validate, renderForm, saveEditorReference, isValid } = useFormEditor();
@@ -11,7 +11,7 @@ export const FormEditor = () => {
         <Editor
           height="50vh"
           defaultLanguage="json"
-          defaultValue={JSON.stringify(DEFAULT_EDITOR_VALUE)}
+          defaultValue={JSON.stringify(MORE_RADIO_BUTTONS_FORM)}
           onValidate={validate}
           onMount={saveEditorReference}
         />

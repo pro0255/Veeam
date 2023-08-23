@@ -1,16 +1,21 @@
-import React from 'react';
-import { FormField } from '../FormField';
-import { FormFieldEnum } from '../fieldTypeToComponent';
+import React, { forwardRef } from 'react';
 import { fullWidthAndHeight } from './style';
+import { createFieldId } from '../../../utils/createFieldId';
+import { FormFieldEnum } from '../fieldTypeToComponent';
+import { InputProps } from './types';
 
-type Props = {
-  label: string;
-};
-
-export const Input = ({ label }: Props) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ label }, ref) => {
   return (
-    <FormField label={label} type={FormFieldEnum.string}>
-      <input style={fullWidthAndHeight} type={'text'} />
-    </FormField>
+    <input
+      id={createFieldId({
+        type: FormFieldEnum.string,
+        label
+      })}
+      ref={ref}
+      style={fullWidthAndHeight}
+      type={'text'}
+    />
   );
-};
+});
+
+Input.displayName = 'Input';
