@@ -20,8 +20,6 @@ export const useFormEditor = () => {
   const saveEditorReference: OnMount = (editor) => {
     editorRef.current = editor;
 
-    console.log(editor.getAction('editor.action.formatDocument'));
-
     // Needs to run after the value is set into editor (without timeout the default will be not formatted)
     setTimeout(() => {
       editor.getAction('editor.action.formatDocument')?.run();

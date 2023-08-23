@@ -1,5 +1,6 @@
 import { FormType } from '../../../types';
 import { FormFieldEnum } from '../../../FormRenderer/components/FormFields/fieldTypeToComponent';
+import { ButtonActions } from '../../../FormRenderer/components/FormFooter/types';
 
 export const MORE_RADIO_BUTTONS_FORM: FormType = {
   title: 'More radio buttons form',
@@ -9,6 +10,12 @@ export const MORE_RADIO_BUTTONS_FORM: FormType = {
     },
     {
       label: 'Clear'
+    },
+    {
+      buttonType: ButtonActions.Alert
+    },
+    {
+      buttonType: ButtonActions.Clear
     }
   ],
   items: [

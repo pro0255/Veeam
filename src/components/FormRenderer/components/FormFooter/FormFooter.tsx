@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormFooterProps } from './types';
-import { FooterButton } from './FooterButton';
+import { FooterButton } from './instances/FooterButton';
+import { ButtonRenderer, buttonRendererKey } from './ButtonRenderer';
 
 export const FormFooter = ({ buttons }: FormFooterProps) => {
   return (
@@ -23,8 +24,7 @@ export const FormFooter = ({ buttons }: FormFooterProps) => {
           justifyContent: 'space-around'
         }}>
         {buttons.map((button) => {
-          // While the label might resemble an unsafe key, it should be acceptable for user experience (having buttons with identical labels is incorrect)
-          return <FooterButton key={button.label} label={button.label} />;
+          return <ButtonRenderer button={button} key={buttonRendererKey(button)} />;
         })}
       </div>
     </footer>

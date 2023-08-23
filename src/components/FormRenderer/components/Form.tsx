@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useCallback, useMemo } from 'react';
+import React, { createContext, ReactNode, useCallback, useMemo, useRef } from 'react';
 import { createUseEnsuredContext } from '../../../utils/createUseEnsuredContext';
 
 type FormValue = {
@@ -12,8 +12,10 @@ type Props = {
 };
 
 export const FormProvider = ({ children }: Props) => {
+  const formFields = useRef<Array<HTMLElement>>([]);
+
   const register: React.RefAttributes<any>['ref'] = (formFieldReference) => {
-    console.log(formFieldReference);
+    formFields.current.push(formFieldReference);
   };
 
   return (

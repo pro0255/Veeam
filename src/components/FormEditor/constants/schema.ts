@@ -1,3 +1,5 @@
+import { ButtonActions } from '../../FormRenderer/components/FormFooter/types';
+
 export const SCHEMA = {
   uri: 'http://myserver/foo-schema.json',
   fileMatch: ['*'],
@@ -21,14 +23,26 @@ export const SCHEMA = {
       },
       footer: {
         type: 'array',
+        uniqueItems: true,
         items: {
-          required: ['label'],
-          type: 'object',
-          properties: {
-            label: { type: 'string' },
-            additionalProperties: false
-          },
-          additionalProperties: false
+          oneOf: [
+            {
+              required: ['buttonType'],
+              type: 'object',
+              properties: {
+                buttonType: { enum: Object.values(ButtonActions) },
+                additionalProperties: false
+              }
+            },
+            {
+              required: ['label'],
+              type: 'object',
+              properties: {
+                label: { type: 'string' },
+                additionalProperties: false
+              }
+            }
+          ]
         },
         additionalProperties: false
       }
