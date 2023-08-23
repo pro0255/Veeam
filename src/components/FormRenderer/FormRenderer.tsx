@@ -30,7 +30,16 @@ export const FormRenderer = () => {
           alignItems: 'center',
           justifyContent: 'space-around'
         }}>
-        {title && <FormTitle title={title} />}
+        {title && (
+          <div
+            style={{
+              width: '100%',
+              border: 'solid 1px white',
+              marginBottom: '20px'
+            }}>
+            <FormTitle title={title} />
+          </div>
+        )}
         <div
           style={{
             display: 'grid',

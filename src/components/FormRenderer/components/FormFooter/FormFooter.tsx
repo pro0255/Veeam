@@ -6,16 +6,27 @@ export const FormFooter = ({ buttons }: FormFooterProps) => {
   return (
     <footer
       style={{
-        display: 'flex',
-        flexDirection: 'row',
+        marginTop: '20px',
+        backgroundColor: 'white',
         width: '100%',
-        alignItems: 'center',
-        justifyContent: 'space-around'
+        display: 'flex'
       }}>
-      {buttons.map((button) => {
-        // While the label might resemble an unsafe key, it should be acceptable for user experience (having buttons with identical labels is incorrect)
-        return <FooterButton key={button.label} label={button.label} />;
-      })}
+      <div
+        style={{
+          padding: '20px',
+          backgroundColor: 'white',
+          display: 'flex',
+          flexDirection: 'row',
+          width: '100%',
+
+          alignItems: 'center',
+          justifyContent: 'space-around'
+        }}>
+        {buttons.map((button) => {
+          // While the label might resemble an unsafe key, it should be acceptable for user experience (having buttons with identical labels is incorrect)
+          return <FooterButton key={button.label} label={button.label} />;
+        })}
+      </div>
     </footer>
   );
 };
