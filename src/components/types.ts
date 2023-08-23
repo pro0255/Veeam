@@ -1,4 +1,7 @@
-export enum FormFieldType {
+import { FormTitleProps } from './FormRenderer/components/FormTitle';
+import { FormFooterProps } from './FormRenderer/components/FormFooter/types';
+
+export enum FormField {
   number = 'NUMBER',
   string = 'TEXT',
   multiLine = 'MULTILINE',
@@ -7,17 +10,16 @@ export enum FormFieldType {
   enum = 'ENUM'
 }
 
-type FormTitle = string;
-type FormButton = {
+export type Title = FormTitleProps['title'];
+export type Buttons = FormFooterProps['buttons'];
+
+export type FormFieldType = {
   label: string;
-};
-type FormField = {
-  label: string;
-  type: FormFieldType;
+  type: FormField;
 };
 
 export type FormType = {
-  title?: FormTitle;
+  title?: Title;
   items: Array<FormField>;
-  footer?: Array<FormButton>;
+  footer?: Buttons;
 };
