@@ -9,7 +9,7 @@ type EditorType = Parameters<OnMount>[0];
 
 export const useFormEditor = () => {
   const editorRef = useRef<EditorType | null>(null);
-  const [isValid, setIsValid] = useState<boolean>(false);
+  const [isValid, setIsValid] = useState<boolean>(true);
   const formStorage = useFormStorageContext();
 
   const validate: OnValidate = (markers) => {
