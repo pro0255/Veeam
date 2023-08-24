@@ -1,10 +1,9 @@
 import React, { forwardRef } from 'react';
-import { LabelWrapper } from '../LabelWrapper';
 import { FormFieldEnum } from '../fieldTypeToComponent';
 import { fullWidthAndHeight } from './style';
-import { createFieldId, createRadioButtonId } from '../../../utils/createFieldId';
+import { createRadioButtonId } from '../../../utils/createFieldId';
 import { RadioButtonProps } from './types';
-import { createRadioButtonSetId } from '../../Form/utils/createRadioButtonName';
+import { createRadioButtonName } from '../../Form/utils/createRadioButtonName';
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
   ({ label, setId }, ref) => {
@@ -16,7 +15,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
           setId
         })}-${setId}`}
         ref={ref}
-        name={createRadioButtonSetId(setId)}
+        name={createRadioButtonName(setId)}
         style={fullWidthAndHeight}
         value={label}
         type="radio"
