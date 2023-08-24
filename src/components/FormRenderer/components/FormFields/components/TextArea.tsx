@@ -13,6 +13,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ label 
       })}
       ref={ref}
       style={fullWidthAndHeight}
+      name={label}
     />
   );
 });

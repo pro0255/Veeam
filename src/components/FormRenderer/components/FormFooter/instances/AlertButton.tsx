@@ -1,13 +1,14 @@
 import React from 'react';
 import { FooterButton } from './FooterButton';
-import { useFormContext } from '../../Form';
+import { useFormContext } from '../../Form/Form';
 import { ButtonActions, FooterButtonFC } from '../types';
 
 export const AlertButton: FooterButtonFC = () => {
-  const value = useFormContext();
+  const { getValues } = useFormContext();
 
   const alertWithValue = () => {
-    console.log('alert');
+    const values = getValues();
+    alert(JSON.stringify(values));
   };
 
   return <FooterButton label={'Apply'} onClick={alertWithValue} />;

@@ -2,7 +2,7 @@ import React from 'react';
 import { FormFieldsProps } from './types';
 import { fieldTypeToComponent } from './fieldTypeToComponent';
 import { LabelWrapper } from './LabelWrapper';
-import { useFormContext } from '../Form';
+import { useFormContext } from '../Form/Form';
 import { isRadioButton } from './isRadioButton';
 import { RadioButton } from './components/RadioButton';
 import { FieldRenderer } from './FieldRenderer';

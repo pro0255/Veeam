@@ -12,6 +12,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(({ lab
         label
       })}
       ref={ref}
+      name={label}
       style={fullWidthAndHeight}
       type={'number'}
     />

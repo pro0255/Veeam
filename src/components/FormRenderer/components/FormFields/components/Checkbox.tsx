@@ -10,6 +10,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ label }, 
       ref={ref}
       style={fullWidthAndHeight}
       type="checkbox"
+      name={label}
       id={createFieldId({
         type: FormFieldEnum.boolean,
         label

@@ -23,7 +23,7 @@ export const useFormEditor = () => {
     // Needs to run after the value is set into editor (without timeout the default will be not formatted)
     setTimeout(() => {
       editor.getAction('editor.action.formatDocument')?.run();
-    }, 100);
+    }, 200);
   };
 
   const renderForm = () => {

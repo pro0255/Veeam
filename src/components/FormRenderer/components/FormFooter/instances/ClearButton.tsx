@@ -1,16 +1,12 @@
 import React from 'react';
 import { FooterButton } from './FooterButton';
-import { useFormContext } from '../../Form';
+import { useFormContext } from '../../Form/Form';
 import { ButtonActions, FooterButtonFC } from '../types';
 
 export const ClearButton: FooterButtonFC = () => {
-  const value = useFormContext();
+  const { clear } = useFormContext();
 
-  const clearValues = () => {
-    console.log('Clearing');
-  };
-
-  return <FooterButton label={'Clear'} onClick={clearValues} />;
+  return <FooterButton label={'Clear'} onClick={clear} />;
 };
 
 ClearButton.footerId = ButtonActions.Clear;

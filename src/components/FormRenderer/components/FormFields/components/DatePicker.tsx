@@ -11,6 +11,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({ label
         type: FormFieldEnum.date,
         label
       })}
+      name={label}
       ref={ref}
       style={fullWidthAndHeight}
       type="date"

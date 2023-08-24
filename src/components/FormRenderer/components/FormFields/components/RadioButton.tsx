@@ -4,6 +4,7 @@ import { FormFieldEnum } from '../fieldTypeToComponent';
 import { fullWidthAndHeight } from './style';
 import { createFieldId, createRadioButtonId } from '../../../utils/createFieldId';
 import { RadioButtonProps } from './types';
+import { createRadioButtonSetId } from '../../Form/utils/createRadioButtonName';
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
   ({ label, setId }, ref) => {
@@ -15,8 +16,9 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
           setId
         })}-${setId}`}
         ref={ref}
-        name={String(setId)}
+        name={createRadioButtonSetId(setId)}
         style={fullWidthAndHeight}
+        value={label}
         type="radio"
       />
     );

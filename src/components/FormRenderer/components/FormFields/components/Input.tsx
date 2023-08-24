@@ -11,6 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ label }, ref) =
         type: FormFieldEnum.string,
         label
       })}
+      name={label}
       ref={ref}
       style={fullWidthAndHeight}
       type={'text'}
