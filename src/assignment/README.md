@@ -28,4 +28,8 @@ I created tests for one function to ensure it worked correctly. These tests were
 
 # Questions
 - Is it acceptable to overlook styling, or is it important to focus on styling as well?
-- Should I develop a form logic that makes all values accessible to the client?
+- Should I develop a form logic that makes all values accessible to the client, or it is only about a rendering a form?
+- Is it ok to use a monaco-editor for json input?
+- Is it fine to skip a certain situation that requires two tabs (config\result)? I've created a design with two columns. Is this situation important for the design, or is it something minor that can be added later?
+- Am I allowed to share a solution for the assignment on GitHub, or is it supposed to be kept private? Can I invite colleagues from development to contribute to a private repository?
+- Should I enhance a code with comments or are the guys ok with thoughts that code (tests) should be a "documentation" and comments are not redundant?
