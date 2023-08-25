@@ -1,22 +1,32 @@
 import React from 'react';
-import { TwoColumnLayout } from '../layout/TwoColumnLayout';
 import { FormEditor } from './FormEditor/FormEditor';
 import { FormRenderer } from './FormRenderer/FormRenderer';
 import { FormStorageProvider } from './FormStorage';
+import { TabType, Tabs } from './Tabs/Tabs';
 
-const VEEAM_LINK = 'https://www.veeam.com/cz';
+export enum TabEnum {
+  Config = 'Config',
+  Result = 'Result'
+}
+
+const TABS: TabType[] = [
+  {
+    label: 'Config',
+    tabId: TabEnum.Config
+  },
+  {
+    label: 'Result',
+    tabId: TabEnum.Result
+  }
+];
 
 export const Solution = () => {
   return (
-    <>
-      <h1>
-        <a target={'_blank'} rel={'noopener noreferrer'} href={VEEAM_LINK}>
-          Veeam Solution
-        </a>
-      </h1>
-      <FormStorageProvider>
-        <TwoColumnLayout left={<FormEditor />} right={<FormRenderer />} />
-      </FormStorageProvider>
-    </>
+    <FormStorageProvider>
+      <Tabs
+        tabs={TABS}
+        TabsContent={[<FormEditor key={TabEnum.Config} />, <FormRenderer key={TabEnum.Result} />]}
+      />
+    </FormStorageProvider>
   );
 };

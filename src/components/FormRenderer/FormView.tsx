@@ -1,9 +1,8 @@
 import { FormTitle } from './components/FormTitle';
 import { FormFields } from './components/FormFields/FormFields';
 import { FormFooter } from './components/FormFooter/FormFooter';
-import React, { FormEvent } from 'react';
+import React from 'react';
 import { FormType } from '../types';
-import { useFormContext } from './components/Form/Form';
 
 type Props = FormType;
 
