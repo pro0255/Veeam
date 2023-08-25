@@ -1,6 +1,8 @@
-import React, { createContext, Key, ReactElement, useCallback, useMemo, useState } from 'react';
+import React, { createContext, Key, useCallback, useMemo, useState } from 'react';
 import { createUseEnsuredContext } from '../../utils/createUseEnsuredContext';
 import { Tab } from './components/Tab';
+import { TabsProps } from './types';
+import { check, pickCurrentTabContent } from './utils';
 
 type TabsValue = {
   moveToTab: (key: Key) => void;
@@ -14,23 +16,20 @@ export type TabType = {
   tabId: Key;
 };
 
-type Props = {
-  tabs: TabType[];
-  TabsContent: ReactElement[];
-};
-
-export const Tabs = ({ TabsContent, tabs }: Props) => {
+export const Tabs = ({ TabsContent, tabs, defaultSelectedTab }: TabsProps) => {
   check({ TabsContent, tabs });
 
   const [selectedTab, setSelectedTab] = useState<Key>(() => {
-    const firstTabContentKey = TabsContent[0].key;
-    if (!firstTabContentKey) {
+    if (defaultSelectedTab) {
+      return defaultSelectedTab;
+    }
+
+    const firstTabId = tabs[0].tabId;
+    if (!firstTabId) {
       throw new Error('Any of tabs should exist');
     }
-    return firstTabContentKey;
+    return firstTabId;
   });
-
-  console.log(selectedTab);
 
   const moveToDifferentTab = useCallback((key: Key) => {
     setSelectedTab(key);
@@ -64,39 +63,3 @@ export const Tabs = ({ TabsContent, tabs }: Props) => {
 };
 
 export const useTabsContext = createUseEnsuredContext(TabsContext, 'TabsContext');
-
-const check = (args: Pick<Props, 'tabs' | 'TabsContent'>) => {
-  checkLength(args);
-  checkSameTabIds(args);
-};
-
-const checkLength = ({ TabsContent, tabs }: Pick<Props, 'tabs' | 'TabsContent'>) => {
-  if (TabsContent.length !== tabs.length) {
-    throw new Error('The length of the tabs and their content is not same!');
-  }
-};
-
-const checkSameTabIds = ({ TabsContent, tabs }: Pick<Props, 'tabs' | 'TabsContent'>) => {
-  const tabIds = tabs.map((tab) => tab.tabId);
-  const notAllTabIdsExists = !TabsContent.every((TabContent) => {
-    if (TabContent.key === null) {
-      throw new Error('Some TabContent is without a id');
-    }
-
-    return tabIds.includes(TabContent.key);
-  });
-
-  if (notAllTabIdsExists) {
-    throw new Error('The keys should be same as for content so for tabs!');
-  }
-};
-
-const pickCurrentTabContent = (selectedKey: Key, TabsContent: Array<ReactElement>) => {
-  for (const TabContent of TabsContent) {
-    if (TabContent.key === selectedKey) {
-      return TabContent;
-    }
-  }
-
-  return null;
-};
