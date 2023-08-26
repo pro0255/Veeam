@@ -3,7 +3,18 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {}
+    extend: {
+      keyframes: {
+        scale: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' }
+        }
+      },
+      animation: {
+        'make-bigger': 'scale 0.1s ease-out forwards'
+      }
+    }
   },
-  plugins: []
+  // eslint-disable-next-line no-undef
+  plugins: [require('@tailwindcss/forms')]
 };

@@ -48,8 +48,6 @@ const processGroups = (
     }
   });
 
-  console.log(setToValue);
-
   return setToValue;
 };
 

@@ -1,5 +1,6 @@
 import React, { Key } from 'react';
 import { useTabsContext } from '../Tabs';
+import { Button } from '../../View/Button';
 
 type Props = {
   label: string;
@@ -7,12 +8,21 @@ type Props = {
 };
 
 export const Tab = ({ tabId, label }: Props) => {
-  const { moveToTab } = useTabsContext();
+  const { moveToTab, selectedTab } = useTabsContext();
+
+  const isActive = selectedTab === tabId;
 
   const moveToDifferentTab = () => {
-    console.log(tabId);
     moveToTab(tabId);
   };
 
-  return <button onClick={moveToDifferentTab}>{label}</button>;
+  return (
+    <button
+      className={`w-full p-3 hover:text-blue-600 hover:border-b-2 border-blue-600 ${
+        isActive ? 'text-blue-600 border-b-2 border-blue-600' : ''
+      }`}
+      onClick={moveToDifferentTab}>
+      {label}
+    </button>
+  );
 };

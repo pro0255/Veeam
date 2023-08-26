@@ -22,11 +22,13 @@ const TABS: TabType[] = [
 
 export const Solution = () => {
   return (
-    <FormStorageProvider>
-      <Tabs
-        tabs={TABS}
-        TabsContent={[<FormEditor key={TabEnum.Config} />, <FormRenderer key={TabEnum.Result} />]}
-      />
-    </FormStorageProvider>
+    <div className="w-full h-screen">
+      <FormStorageProvider>
+        <Tabs
+          tabs={TABS}
+          TabsContent={[<FormEditor key={TabEnum.Config} />, <FormRenderer key={TabEnum.Result} />]}
+        />
+      </FormStorageProvider>
+    </div>
   );
 };

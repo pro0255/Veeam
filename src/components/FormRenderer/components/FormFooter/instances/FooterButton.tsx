@@ -1,20 +1,21 @@
 import React, { MouseEvent } from 'react';
 import { FooterButtonProps } from '../types';
 import { PREVENT_DEFAULT } from '../../../../../utils/preventDefault';
+import { Button } from '../../../../View/Button';
 
-export const FooterButton = ({ label, ...props }: FooterButtonProps) => {
+type Props = {
+  className?: string;
+};
+
+export const FooterButton = ({ label, ...props }: FooterButtonProps & Props) => {
   const onClick = (event: MouseEvent<HTMLButtonElement>) => {
     props?.onClick?.(event);
     PREVENT_DEFAULT(event);
   };
 
   return (
-    <button
-      onClick={onClick}
-      style={{
-        padding: '10px'
-      }}>
+    <Button onClick={onClick} {...props}>
       {label}
-    </button>
+    </Button>
   );
 };

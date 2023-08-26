@@ -3,44 +3,24 @@ import { FormFields } from './components/FormFields/FormFields';
 import { FormFooter } from './components/FormFooter/FormFooter';
 import React from 'react';
 import { FormType } from '../types';
+import { Card } from '../View/Card';
 
 type Props = FormType;
 
 export const FormView = ({ items, footer, title }: Props) => {
   return (
-    <form
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        border: 'solid 1px white',
-        height: '100%',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'space-around'
-      }}>
-      {title && (
-        <div
-          style={{
-            width: '100%',
-            border: 'solid 1px white',
-            marginBottom: '20px'
-          }}>
-          <FormTitle title={title} />
-        </div>
-      )}
-      <div
-        style={{
-          display: 'grid',
-          wordWrap: 'break-word',
-          gridTemplateColumns: '30% 70%',
-          gap: '10px',
-          justifyContent: 'center',
-          alignItems: 'start',
-          width: '90%'
-        }}>
-        <FormFields items={items} />
-      </div>
-      {footer && <FormFooter buttons={footer} />}
-    </form>
+    <div className={'w-full h-[100vh] flex justify-center items-center'}>
+      <Card>
+        <form className="flex flex-col h-[80vh] w-full justify-evenly items-center">
+          {title && (
+            <div className="p-10 w-full flex flex-row border-b-2 border-gray-200 justify-center">
+              <FormTitle title={title} />
+            </div>
+          )}
+          <FormFields items={items} />
+          {footer && <FormFooter buttons={footer} />}
+        </form>
+      </Card>
+    </div>
   );
 };

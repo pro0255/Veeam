@@ -1,17 +1,10 @@
 import React from 'react';
 import { FormFooterProps } from './types';
-import { FooterButton } from './instances/FooterButton';
 import { ButtonRenderer, buttonRendererKey } from './ButtonRenderer';
 
 export const FormFooter = ({ buttons }: FormFooterProps) => {
   return (
-    <footer
-      style={{
-        marginTop: '20px',
-        backgroundColor: 'white',
-        width: '100%',
-        display: 'flex'
-      }}>
+    <footer className="w-full flex flex-row border-t-2 border-gray-200 justify-center">
       <div
         style={{
           padding: '20px',
@@ -19,7 +12,6 @@ export const FormFooter = ({ buttons }: FormFooterProps) => {
           display: 'flex',
           flexDirection: 'row',
           width: '100%',
-
           alignItems: 'center',
           justifyContent: 'space-around'
         }}>

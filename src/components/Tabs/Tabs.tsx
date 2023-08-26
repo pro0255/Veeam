@@ -46,18 +46,16 @@ export const Tabs = ({ TabsContent, tabs, defaultSelectedTab }: TabsProps) => {
 
   return (
     <TabsContext.Provider value={value}>
-      <div>
-        <ul>
-          {tabs.map(({ tabId, label }) => {
-            return (
-              <li key={tabId}>
-                <Tab tabId={tabId} label={label} />
-              </li>
-            );
-          })}
-        </ul>
-        <main>{Content}</main>
-      </div>
+      <ul className="flex flex-row">
+        {tabs.map(({ tabId, label }) => {
+          return (
+            <li className="w-full" key={tabId}>
+              <Tab tabId={tabId} label={label} />
+            </li>
+          );
+        })}
+      </ul>
+      <div className="w-full flex justify-center">{Content}</div>
     </TabsContext.Provider>
   );
 };

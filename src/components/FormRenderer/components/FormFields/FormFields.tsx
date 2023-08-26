@@ -1,10 +1,7 @@
 import React from 'react';
 import { FormFieldsProps } from './types';
-import { fieldTypeToComponent } from './fieldTypeToComponent';
 import { LabelWrapper } from './LabelWrapper';
-import { useFormContext } from '../Form/Form';
 import { isRadioButton } from './isRadioButton';
-import { RadioButton } from './components/RadioButton';
 import { FieldRenderer } from './FieldRenderer';
 
 export const FormFields = ({ items }: FormFieldsProps) => {
@@ -12,23 +9,27 @@ export const FormFields = ({ items }: FormFieldsProps) => {
   let renderingRadio = false;
 
   return (
-    <>
-      {items.map(({ label, type }) => {
-        // Logic which wraps buttons into "fieldSet"
-        if (isRadioButton(type)) {
-          renderingRadio = true;
-        }
-        if (renderingRadio && !isRadioButton(type)) {
-          renderingRadio = false;
-          radioSet++;
-        }
+    <div className="flex w-full overflow-y-scroll justify-center">
+      <ul className="p-10 flex flex-col w-full max-w-[60%]">
+        {items.map(({ label, type }) => {
+          // Logic which wraps buttons into "fieldSet"
+          if (isRadioButton(type)) {
+            renderingRadio = true;
+          }
+          if (renderingRadio && !isRadioButton(type)) {
+            renderingRadio = false;
+            radioSet++;
+          }
 
-        return (
-          <LabelWrapper key={label} label={label} type={type}>
-            <FieldRenderer type={type} label={label} setId={radioSet} />
-          </LabelWrapper>
-        );
-      })}
-    </>
+          return (
+            <li key={label} className="mt-5">
+              <LabelWrapper key={label} label={label} type={type}>
+                <FieldRenderer type={type} label={label} setId={radioSet} />
+              </LabelWrapper>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };

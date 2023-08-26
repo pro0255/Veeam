@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react';
 import { FormFieldEnum } from '../fieldTypeToComponent';
-import { fullWidthAndHeight } from './style';
 import { createRadioButtonId } from '../../../utils/createFieldId';
 import { RadioButtonProps } from './types';
 import { createRadioButtonName } from '../../Form/utils/createRadioButtonName';
@@ -9,6 +8,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
   ({ label, setId }, ref) => {
     return (
       <input
+        className="w-5 h-5 border-solid border-2 border-gray-300 rounded-xl hover:bg-gray-200 focus:bg-white focus:ring-0 hover:animate-make-bigger"
         id={`${createRadioButtonId({
           type: FormFieldEnum.enum,
           label,
@@ -16,7 +16,6 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
         })}-${setId}`}
         ref={ref}
         name={createRadioButtonName(setId)}
-        style={fullWidthAndHeight}
         value={label}
         type="radio"
       />

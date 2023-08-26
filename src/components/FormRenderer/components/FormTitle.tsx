@@ -5,5 +5,5 @@ export type FormTitleProps = {
 };
 
 export const FormTitle = ({ title }: FormTitleProps) => {
-  return <h3>{title}</h3>;
+  return <h3 className="text-4xl font-extrabold dark:text-white">{title}</h3>;
 };
