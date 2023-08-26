@@ -46,7 +46,7 @@ export const Tabs = ({ TabsContent, tabs, defaultSelectedTab }: TabsProps) => {
 
   return (
     <TabsContext.Provider value={value}>
-      <ul className="flex flex-row">
+      <ul className="flex flex-row shadow-md">
         {tabs.map(({ tabId, label }) => {
           return (
             <li className="w-full" key={tabId}>
