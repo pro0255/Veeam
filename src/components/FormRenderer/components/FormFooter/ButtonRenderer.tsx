@@ -14,11 +14,11 @@ const isLabelButton = (button: Props['button']): button is LabelButton => 'label
 
 export const buttonRendererKey = (button: Props['button']) => {
   if (isTypeButton(button)) {
-    return button.buttonType;
+    return `buttonType-${button.buttonType}`;
   }
 
   if (isLabelButton(button)) {
-    return button.label;
+    return `label-${button.label}`;
   }
 };
 

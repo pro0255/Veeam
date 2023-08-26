@@ -13,6 +13,7 @@ const createFormElements = (items: FormFieldsProps['items']): ReactElement[] => 
   let radioElements: ReactElement[] = [];
 
   items.forEach(({ label, type }, index) => {
+    const radioSetLabel = `Radio set ${radioSet}`;
     // Logic which wraps buttons into "fieldSet"
     if (isRadioButton(type)) {
       renderingRadio = true;
@@ -20,8 +21,8 @@ const createFormElements = (items: FormFieldsProps['items']): ReactElement[] => 
 
     if (isRadioButton(type) && index === items.length - 1) {
       elements.push(
-        <li key={label} className="mt-5">
-          <FieldSet label={`Radio set ${radioSet}`}>{radioElements}</FieldSet>
+        <li key={radioSetLabel} className="mt-5">
+          <FieldSet label={radioSetLabel}>{radioElements}</FieldSet>
         </li>
       );
     }
@@ -29,8 +30,8 @@ const createFormElements = (items: FormFieldsProps['items']): ReactElement[] => 
     if (renderingRadio && !isRadioButton(type)) {
       renderingRadio = false;
       elements.push(
-        <li key={label} className="mt-5">
-          <FieldSet label={`Radio set ${radioSet}`}>{radioElements}</FieldSet>
+        <li key={radioSetLabel} className="mt-5">
+          <FieldSet label={radioSetLabel}>{radioElements}</FieldSet>
         </li>
       );
       radioElements = [];
@@ -40,7 +41,7 @@ const createFormElements = (items: FormFieldsProps['items']): ReactElement[] => 
     if (renderingRadio) {
       radioElements.push(
         <li key={label} className="mt-5">
-          <LabelWrapper key={label} label={label} type={type}>
+          <LabelWrapper label={label} type={type}>
             <FieldRenderer type={type} label={label} setId={radioSet} />
           </LabelWrapper>
         </li>
