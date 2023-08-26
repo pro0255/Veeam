@@ -68,6 +68,10 @@ export const MORE_RADIO_BUTTONS_FORM: FormType = {
       type: FormFieldEnum.number
     },
     {
+      label: 'Today is..',
+      type: FormFieldEnum.date
+    },
+    {
       label: 'Beer',
       type: FormFieldEnum.enum
     },
