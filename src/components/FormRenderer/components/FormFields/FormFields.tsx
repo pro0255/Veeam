@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useMemo } from 'react';
 import { FieldRenderer } from './FieldRenderer';
 import { FieldSet } from './FieldSet';
 import { isRadioButton } from './isRadioButton';
@@ -79,9 +79,11 @@ const createFormElements = (items: FormFieldsProps['items']): ReactElement[] => 
 };
 
 export const FormFields = ({ items }: FormFieldsProps) => {
+  const itemsToRender = useMemo(() => createFormElements(items), [items]);
+
   return (
     <div className="flex w-full overflow-y-scroll justify-center">
-      <ul className="p-10 flex flex-col w-full max-w-[60%]">{createFormElements(items)}</ul>
+      <ul className="p-10 flex flex-col w-full max-w-[60%]">{itemsToRender}</ul>
     </div>
   );
 };
