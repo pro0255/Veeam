@@ -1,3 +1,7 @@
+# Video
+
+- https://www.loom.com/share/c80a31547a4e41adbc4b2238e5e6a038?sid=dc8ea539-5b9b-42b8-9582-6701e7986698
+
 # Improvements
 
 - The entire application could have more advanced styling.
