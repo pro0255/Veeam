@@ -1,15 +1,15 @@
-import React from 'react'
-import { Editor } from '@monaco-editor/react'
-import { Button } from '../Button'
-import { useFormStorageContext } from '../FormStorage'
-import { MORE_RADIO_BUTTONS_FORM } from './constants/forms/moreRadioButtons'
-import { useFormEditor } from './hooks/useFormEditor'
+import React from 'react';
+import { Editor } from '@monaco-editor/react';
+import { Button } from '../Button';
+import { useFormStorageContext } from '../FormStorage';
+import { MORE_RADIO_BUTTONS_FORM } from './constants/forms/moreRadioButtons';
+import { useFormEditor } from './hooks/useFormEditor';
 
 export const FormEditor = () => {
   const { form } = useFormStorageContext();
   const { validate, renderForm, saveEditorReference, isValid } = useFormEditor();
   return (
-    <div className="flex flex-col w-full h-[100vh]">
+    <div className="flex flex-col w-full h-[100wh]">
       <main className="w-full h-full max-h-[90%]">
         <Editor
           height="85vh"
