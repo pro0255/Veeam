@@ -1,4 +1,4 @@
-import { ButtonActions } from '../../FormRenderer/components/FormFooter/types';
+import { ButtonActions } from '../../FormRenderer/components/FormFooter/types'
 
 export const SCHEMA = {
   uri: 'http://myserver/foo-schema.json',

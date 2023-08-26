@@ -1,6 +1,6 @@
-import React, { createContext, ReactNode, useCallback, useMemo, useState } from 'react';
-import { FormType } from './types';
-import { createUseEnsuredContext } from '../utils/createUseEnsuredContext';
+import React, { createContext, ReactNode, useCallback, useMemo, useState } from 'react'
+import { createUseEnsuredContext } from '../utils/createUseEnsuredContext'
+import { FormType } from './types'
 
 type FormStorageValue = {
   save: (formString: string) => void;

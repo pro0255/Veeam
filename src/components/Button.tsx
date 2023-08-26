@@ -1,4 +1,4 @@
-import React, { HTMLProps } from 'react';
+import React, { HTMLProps } from 'react'
 
 type Props = { className?: string };
 

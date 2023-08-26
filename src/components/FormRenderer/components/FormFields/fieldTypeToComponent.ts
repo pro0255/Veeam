@@ -1,9 +1,9 @@
-import { Checkbox } from './components/Checkbox';
-import { RadioButton } from './components/RadioButton';
-import { DatePicker } from './components/DatePicker';
-import { TextArea } from './components/TextArea';
-import { Input } from './components/Input';
-import { NumberInput } from './components/NumberInput';
+import { Checkbox } from './components/Checkbox'
+import { DatePicker } from './components/DatePicker'
+import { Input } from './components/Input'
+import { NumberInput } from './components/NumberInput'
+import { RadioButton } from './components/RadioButton'
+import { TextArea } from './components/TextArea'
 
 export enum FormFieldEnum {
   number = 'numeric',

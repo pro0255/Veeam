@@ -1,4 +1,4 @@
-import { FormElements } from '../Form';
+import { FormElements } from '../Form'
 
 export const processCommonElements = (elements: FormElements[]) => {
   const values: Record<string, string> = {};

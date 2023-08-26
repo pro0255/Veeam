@@ -1,20 +1,20 @@
-import React from 'react';
-import { useFormContext } from '../Form/Form';
+import React from 'react'
+import { useFormContext } from '../Form/Form'
+import { Checkbox } from './components/Checkbox'
+import { DatePicker } from './components/DatePicker'
+import { Input } from './components/Input'
+import { NumberInput } from './components/NumberInput'
+import { RadioButton } from './components/RadioButton'
+import { TextArea } from './components/TextArea'
 import {
   CheckboxProps,
   DatePickerProps,
   InputProps,
   NumberInputProps,
   RadioButtonProps,
-  TextAreaProps
-} from './components/types';
-import { FormFieldEnum } from './fieldTypeToComponent';
-import { Checkbox } from './components/Checkbox';
-import { Input } from './components/Input';
-import { RadioButton } from './components/RadioButton';
-import { TextArea } from './components/TextArea';
-import { DatePicker } from './components/DatePicker';
-import { NumberInput } from './components/NumberInput';
+  TextAreaProps,
+} from './components/types'
+import { FormFieldEnum } from './fieldTypeToComponent'
 
 type Props = CheckboxProps &
   InputProps &

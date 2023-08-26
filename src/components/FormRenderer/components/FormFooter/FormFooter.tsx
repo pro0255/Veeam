@@ -1,6 +1,6 @@
-import React from 'react';
-import { FormFooterProps } from './types';
-import { ButtonRenderer, buttonRendererKey } from './ButtonRenderer';
+import React from 'react'
+import { ButtonRenderer, buttonRendererKey } from './ButtonRenderer'
+import { FormFooterProps } from './types'
 
 export const FormFooter = ({ buttons }: FormFooterProps) => {
   return (

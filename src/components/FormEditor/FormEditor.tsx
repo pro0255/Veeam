@@ -1,9 +1,9 @@
-import React from 'react';
-import { Editor } from '@monaco-editor/react';
-import { useFormEditor } from './hooks/useFormEditor';
-import { MORE_RADIO_BUTTONS_FORM } from './constants/forms/moreRadioButtons';
-import { Button } from '../Button';
-import { useFormStorageContext } from '../FormStorage';
+import React from 'react'
+import { Editor } from '@monaco-editor/react'
+import { Button } from '../Button'
+import { useFormStorageContext } from '../FormStorage'
+import { MORE_RADIO_BUTTONS_FORM } from './constants/forms/moreRadioButtons'
+import { useFormEditor } from './hooks/useFormEditor'
 
 export const FormEditor = () => {
   const { form } = useFormStorageContext();

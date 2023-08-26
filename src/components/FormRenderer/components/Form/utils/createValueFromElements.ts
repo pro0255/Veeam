@@ -1,7 +1,7 @@
-import { FormElements } from '../Form';
-import { split } from '../../../../../utils/split';
-import { processCommonElements, processRadioElements } from './rest';
-import { isRadioInput } from './isElement';
+import { split } from '../../../../../utils/split'
+import { FormElements } from '../Form'
+import { isRadioInput } from './isElement'
+import { processCommonElements, processRadioElements } from './rest'
 
 export const createValueFromElements = (formElements: Array<FormElements>): Record<string, any> => {
   const { firstGroup: radioInputGroup, secondGroup: withoutRadioInputGroup } = split(

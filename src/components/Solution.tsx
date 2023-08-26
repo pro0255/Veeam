@@ -1,8 +1,8 @@
-import React from 'react';
-import { FormEditor } from './FormEditor/FormEditor';
-import { FormRenderer } from './FormRenderer/FormRenderer';
-import { FormStorageProvider } from './FormStorage';
-import { TabType, Tabs } from './Tabs/Tabs';
+import React from 'react'
+import { FormEditor } from './FormEditor/FormEditor'
+import { FormRenderer } from './FormRenderer/FormRenderer'
+import { FormStorageProvider } from './FormStorage'
+import { Tabs, TabType } from './Tabs/Tabs'
 
 export enum TabEnum {
   Config = 'Config',

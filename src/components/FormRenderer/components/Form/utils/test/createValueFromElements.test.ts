@@ -1,6 +1,6 @@
-import { FormElements } from '../../Form';
-import { createValueFromElements } from '../createValueFromElements';
-import { createRadioButtonName } from '../createRadioButtonName';
+import { FormElements } from '../../Form'
+import { createRadioButtonName } from '../createRadioButtonName'
+import { createValueFromElements } from '../createValueFromElements'
 
 const MOCKED_INPUT: HTMLInputElement = {
   name: 'input',
@@ -80,4 +80,5 @@ describe('createValueFromElements', () => {
   });
 });
 
-export {};
+export { };
+

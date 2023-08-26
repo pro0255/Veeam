@@ -1,6 +1,6 @@
-import { FormType } from '../../../types';
-import { FormFieldEnum } from '../../../FormRenderer/components/FormFields/fieldTypeToComponent';
-import { ButtonActions } from '../../../FormRenderer/components/FormFooter/types';
+import { FormFieldEnum } from '../../../FormRenderer/components/FormFields/fieldTypeToComponent'
+import { ButtonActions } from '../../../FormRenderer/components/FormFooter/types'
+import { FormType } from '../../../types'
 
 export const MORE_RADIO_BUTTONS_FORM: FormType = {
   title: 'More radio buttons form',

@@ -1,5 +1,5 @@
-import { FormFieldEnum } from '../components/FormFields/fieldTypeToComponent';
-import { RadioButtonProps } from '../components/FormFields/components/types';
+import { RadioButtonProps } from '../components/FormFields/components/types'
+import { FormFieldEnum } from '../components/FormFields/fieldTypeToComponent'
 
 type Args = {
   label: string;

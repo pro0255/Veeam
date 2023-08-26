@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
-import { LabelWrapper } from './LabelWrapper';
-import { FormFieldEnum } from './fieldTypeToComponent';
+import React, { ReactNode } from 'react'
+import { FormFieldEnum } from './fieldTypeToComponent'
+import { LabelWrapper } from './LabelWrapper'
 
 type Props = {
   children: ReactNode[];

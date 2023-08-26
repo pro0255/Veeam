@@ -1,7 +1,7 @@
-import React, { createContext, ReactNode, useRef } from 'react';
-import { createUseEnsuredContext } from '../../../../utils/createUseEnsuredContext';
-import { clearElements } from './utils/clearElements';
-import { createValueFromElements } from './utils/createValueFromElements';
+import React, { createContext, ReactNode, useRef } from 'react'
+import { createUseEnsuredContext } from '../../../../utils/createUseEnsuredContext'
+import { clearElements } from './utils/clearElements'
+import { createValueFromElements } from './utils/createValueFromElements'
 
 type FormValue<TData extends object = object> = {
   register: React.RefAttributes<any>['ref'];

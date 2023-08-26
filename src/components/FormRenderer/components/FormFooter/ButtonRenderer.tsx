@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react';
-import { ActionButton, ButtonActions, FormFooterProps, LabelButton } from './types';
-import { FooterButton } from './instances/FooterButton';
-import { AlertButton } from './instances/AlertButton';
-import { ClearButton } from './instances/ClearButton';
-import { NOT_IMPLEMENTED } from '../../../../utils/NOT_IMPLEMENTED';
+import React, { ReactNode } from 'react'
+import { NOT_IMPLEMENTED } from '../../../../utils/NOT_IMPLEMENTED'
+import { AlertButton } from './instances/AlertButton'
+import { ClearButton } from './instances/ClearButton'
+import { FooterButton } from './instances/FooterButton'
+import { ActionButton, ButtonActions, FormFooterProps, LabelButton } from './types'
 
 type Props = {
   button: FormFooterProps['buttons'][number];

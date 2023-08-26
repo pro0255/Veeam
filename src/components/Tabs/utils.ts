@@ -1,5 +1,5 @@
-import { Key, ReactElement } from 'react';
-import { TabsProps } from './types';
+import { Key, ReactElement } from 'react'
+import { TabsProps } from './types'
 
 export const check = (args: Pick<TabsProps, 'tabs' | 'TabsContent'>) => {
   checkLength(args);

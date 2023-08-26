@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
-import { createFieldId } from '../../../utils/createFieldId';
-import { FormFieldEnum } from '../fieldTypeToComponent';
-import { NumberInputProps } from './types';
+import React, { forwardRef } from 'react'
+import { createFieldId } from '../../../utils/createFieldId'
+import { FormFieldEnum } from '../fieldTypeToComponent'
+import { NumberInputProps } from './types'
 
 export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(({ label }, ref) => {
   return (

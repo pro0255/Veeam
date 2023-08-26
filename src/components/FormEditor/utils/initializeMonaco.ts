@@ -1,5 +1,5 @@
-import { loader } from '@monaco-editor/react';
-import { SCHEMA } from '../constants/schema';
+import { loader } from '@monaco-editor/react'
+import { SCHEMA } from '../constants/schema'
 
 export const initializeMonaco = () => {
   loader.init().then((monaco) => {

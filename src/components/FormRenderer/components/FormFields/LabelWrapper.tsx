@@ -1,7 +1,7 @@
-import React from 'react';
-import { FormFieldProp } from './types';
-import { createFieldId } from '../../utils/createFieldId';
-import { FormFieldEnum } from './fieldTypeToComponent';
+import React from 'react'
+import { createFieldId } from '../../utils/createFieldId'
+import { FormFieldEnum } from './fieldTypeToComponent'
+import { FormFieldProp } from './types'
 
 const AboveLabel = ({ label, type, children }: FormFieldProp) => {
   return (

@@ -1,4 +1,4 @@
-import { FormElements } from '../Form';
+import { FormElements } from '../Form'
 
 export const isCheckbox = (element: FormElements) => {
   return element.type === 'checkbox';

@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
-import { FormFieldsProps } from './types';
-import { LabelWrapper } from './LabelWrapper';
-import { isRadioButton } from './isRadioButton';
-import { FieldRenderer } from './FieldRenderer';
-import { FieldSet } from './FieldSet';
+import React, { ReactElement } from 'react'
+import { FieldRenderer } from './FieldRenderer'
+import { FieldSet } from './FieldSet'
+import { isRadioButton } from './isRadioButton'
+import { LabelWrapper } from './LabelWrapper'
+import { FormFieldsProps } from './types'
 
 const createFormElements = (items: FormFieldsProps['items']): ReactElement[] => {
   const elements: ReactElement[] = [];

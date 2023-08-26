@@ -1,9 +1,9 @@
-import { FormTitle } from './components/FormTitle';
-import { FormFields } from './components/FormFields/FormFields';
-import { FormFooter } from './components/FormFooter/FormFooter';
-import React from 'react';
-import { FormType } from '../types';
-import { Card } from '../Card';
+import React from 'react'
+import { Card } from '../Card'
+import { FormType } from '../types'
+import { FormFields } from './components/FormFields/FormFields'
+import { FormFooter } from './components/FormFooter/FormFooter'
+import { FormTitle } from './components/FormTitle'
 
 type Props = FormType;
 

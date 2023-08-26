@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
-import { createFieldId } from '../../../utils/createFieldId';
-import { FormFieldEnum } from '../fieldTypeToComponent';
-import { CheckboxProps } from './types';
+import React, { forwardRef } from 'react'
+import { createFieldId } from '../../../utils/createFieldId'
+import { FormFieldEnum } from '../fieldTypeToComponent'
+import { CheckboxProps } from './types'
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ label }, ref) => {
   return (

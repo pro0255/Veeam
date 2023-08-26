@@ -1,5 +1,5 @@
-import { Fields, FormType } from '../../../types';
-import { FormFieldEnum } from '../../../FormRenderer/components/FormFields/fieldTypeToComponent';
+import { FormFieldEnum } from '../../../FormRenderer/components/FormFields/fieldTypeToComponent'
+import { Fields, FormType } from '../../../types'
 
 // Functions which helps to create all types of fields
 const createAllFields = () => {

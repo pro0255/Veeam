@@ -1,4 +1,4 @@
-import { Context, ContextType, useContext } from 'react';
+import { Context, ContextType, useContext } from 'react'
 
 export const createUseEnsuredContext = <T extends Context<any>>(
   context: T,

@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
-import { FormFieldEnum } from '../fieldTypeToComponent';
-import { createRadioButtonId } from '../../../utils/createFieldId';
-import { RadioButtonProps } from './types';
-import { createRadioButtonName } from '../../Form/utils/createRadioButtonName';
+import React, { forwardRef } from 'react'
+import { createRadioButtonId } from '../../../utils/createFieldId'
+import { createRadioButtonName } from '../../Form/utils/createRadioButtonName'
+import { FormFieldEnum } from '../fieldTypeToComponent'
+import { RadioButtonProps } from './types'
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
   ({ label, setId }, ref) => {

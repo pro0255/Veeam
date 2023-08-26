@@ -1,7 +1,7 @@
-import { initializeMonaco } from '../utils/initializeMonaco';
-import { useRef, useState } from 'react';
-import { OnMount, OnValidate } from '@monaco-editor/react';
-import { useFormStorageContext } from '../../FormStorage';
+import { useRef, useState } from 'react'
+import { OnMount, OnValidate } from '@monaco-editor/react'
+import { useFormStorageContext } from '../../FormStorage'
+import { initializeMonaco } from '../utils/initializeMonaco'
 
 initializeMonaco();
 

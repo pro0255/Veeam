@@ -1,6 +1,6 @@
-import { FormElements } from '../Form';
-import { split } from '../../../../../utils/split';
-import { isCheckbox, isRadioInput } from './isElement';
+import { split } from '../../../../../utils/split'
+import { FormElements } from '../Form'
+import { isCheckbox, isRadioInput } from './isElement'
 
 export const clearElements = (formElements: Array<FormElements>) => {
   const { firstGroup: radioInputGroup, secondGroup: withoutRadioInputGroup } = split(

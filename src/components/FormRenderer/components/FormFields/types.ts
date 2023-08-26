@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { FormFieldEnum } from './fieldTypeToComponent';
+import { ReactNode } from 'react'
+import { FormFieldEnum } from './fieldTypeToComponent'
 
 export type FormFieldProp = {
   children: ReactNode;

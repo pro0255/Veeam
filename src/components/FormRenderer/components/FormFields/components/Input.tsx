@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
-import { createFieldId } from '../../../utils/createFieldId';
-import { FormFieldEnum } from '../fieldTypeToComponent';
-import { InputProps } from './types';
+import React, { forwardRef } from 'react'
+import { createFieldId } from '../../../utils/createFieldId'
+import { FormFieldEnum } from '../fieldTypeToComponent'
+import { InputProps } from './types'
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(({ label }, ref) => {
   return (

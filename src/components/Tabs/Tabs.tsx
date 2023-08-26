@@ -1,8 +1,8 @@
-import React, { createContext, Key, useCallback, useMemo, useState } from 'react';
-import { createUseEnsuredContext } from '../../utils/createUseEnsuredContext';
-import { Tab } from './components/Tab';
-import { TabsProps } from './types';
-import { check, pickCurrentTabContent } from './utils';
+import React, { createContext, Key, useCallback, useMemo, useState } from 'react'
+import { createUseEnsuredContext } from '../../utils/createUseEnsuredContext'
+import { Tab } from './components/Tab'
+import { TabsProps } from './types'
+import { check, pickCurrentTabContent } from './utils'
 
 type TabsValue = {
   moveToTab: (key: Key) => void;

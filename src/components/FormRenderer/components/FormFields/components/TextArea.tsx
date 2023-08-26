@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
-import { createFieldId } from '../../../utils/createFieldId';
-import { FormFieldEnum } from '../fieldTypeToComponent';
-import { TextAreaProps } from './types';
+import React, { forwardRef } from 'react'
+import { createFieldId } from '../../../utils/createFieldId'
+import { FormFieldEnum } from '../fieldTypeToComponent'
+import { TextAreaProps } from './types'
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ label }, ref) => {
   return (

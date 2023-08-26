@@ -1,5 +1,5 @@
-import React, { Key } from 'react';
-import { useTabsContext } from '../Tabs';
+import React, { Key } from 'react'
+import { useTabsContext } from '../Tabs'
 
 type Props = {
   label: string;

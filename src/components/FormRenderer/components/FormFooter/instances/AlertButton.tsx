@@ -1,7 +1,7 @@
-import React from 'react';
-import { FooterButton } from './FooterButton';
-import { useFormContext } from '../../Form/Form';
-import { ButtonActions, FooterButtonFC } from '../types';
+import React from 'react'
+import { useFormContext } from '../../Form/Form'
+import { ButtonActions, FooterButtonFC } from '../types'
+import { FooterButton } from './FooterButton'
 
 export const AlertButton: FooterButtonFC = () => {
   const { getValues } = useFormContext();
