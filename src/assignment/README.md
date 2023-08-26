@@ -8,6 +8,7 @@
 - All the components were designed as uncontrolled. With a bit more time, they could be transformed into controlled components.
 - It might be beneficial for the entire form to support validation using a library like Yup.
 - The typing of the getValues function could be enhanced.
+- Some types do have "any" type. Should be typed correctly!
 
 # Explanation of Certain Topics
 
