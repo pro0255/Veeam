@@ -1,8 +1,8 @@
-import React, { createContext, Key, useCallback, useMemo, useState } from 'react'
-import { createUseEnsuredContext } from '../../utils/createUseEnsuredContext'
-import { Tab } from './components/Tab'
-import { TabsProps } from './types'
-import { check, pickCurrentTabContent } from './utils'
+import React, { createContext, Key, useCallback, useMemo, useState } from 'react';
+import { createUseEnsuredContext } from '../../utils/createUseEnsuredContext';
+import { TabsProps } from './types';
+import { check, pickCurrentTabContent } from './utils';
+import { TabList } from './components/TabList';
 
 type TabsValue = {
   moveToTab: (key: Key) => void;
@@ -46,15 +46,7 @@ export const Tabs = ({ TabsContent, tabs, defaultSelectedTab }: TabsProps) => {
 
   return (
     <TabsContext.Provider value={value}>
-      <ul className="flex flex-row shadow-md">
-        {tabs.map(({ tabId, label }) => {
-          return (
-            <li className="w-full" key={tabId}>
-              <Tab tabId={tabId} label={label} />
-            </li>
-          );
-        })}
-      </ul>
+      <TabList tabs={tabs} />
       <div className="w-full flex justify-center">{Content}</div>
     </TabsContext.Provider>
   );
