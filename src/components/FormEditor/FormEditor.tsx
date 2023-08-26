@@ -3,15 +3,17 @@ import { Editor } from '@monaco-editor/react';
 import { useFormEditor } from './hooks/useFormEditor';
 import { MORE_RADIO_BUTTONS_FORM } from './constants/forms/moreRadioButtons';
 import { Button } from '../View/Button';
+import { useFormStorageContext } from '../FormStorage';
 
 export const FormEditor = () => {
+  const { form } = useFormStorageContext();
   const { validate, renderForm, saveEditorReference, isValid } = useFormEditor();
   return (
     <div className="flex flex-col w-full h-[100vh]">
       <main className="w-full h-full max-h-[80%] p-10">
         <Editor
           defaultLanguage="json"
-          defaultValue={JSON.stringify(MORE_RADIO_BUTTONS_FORM)}
+          defaultValue={JSON.stringify(form ?? MORE_RADIO_BUTTONS_FORM)}
           onValidate={validate}
           onMount={saveEditorReference}
         />
