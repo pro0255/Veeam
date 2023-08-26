@@ -2,12 +2,6 @@ import React from 'react';
 import { FormFieldProp } from './types';
 import { createFieldId } from '../../utils/createFieldId';
 import { FormFieldEnum } from './fieldTypeToComponent';
-import { Checkbox } from './components/Checkbox';
-import { Input } from './components/Input';
-import { RadioButton } from './components/RadioButton';
-import { TextArea } from './components/TextArea';
-import { DatePicker } from './components/DatePicker';
-import { NumberInput } from './components/NumberInput';
 
 const AboveLabel = ({ label, type, children }: FormFieldProp) => {
   return (
