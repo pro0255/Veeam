@@ -2,7 +2,7 @@ import React from 'react';
 import { Editor } from '@monaco-editor/react';
 import { useFormEditor } from './hooks/useFormEditor';
 import { MORE_RADIO_BUTTONS_FORM } from './constants/forms/moreRadioButtons';
-import { Button } from '../View/Button';
+import { Button } from '../Button';
 import { useFormStorageContext } from '../FormStorage';
 
 export const FormEditor = () => {

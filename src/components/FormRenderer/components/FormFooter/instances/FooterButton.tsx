@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import { FooterButtonProps } from '../types';
 import { PREVENT_DEFAULT } from '../../../../../utils/preventDefault';
-import { Button } from '../../../../View/Button';
+import { Button } from '../../../../Button';
 
 type Props = {
   className?: string;

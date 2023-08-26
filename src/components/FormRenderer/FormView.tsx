@@ -3,7 +3,7 @@ import { FormFields } from './components/FormFields/FormFields';
 import { FormFooter } from './components/FormFooter/FormFooter';
 import React from 'react';
 import { FormType } from '../types';
-import { Card } from '../View/Card';
+import { Card } from '../Card';
 
 type Props = FormType;
 
